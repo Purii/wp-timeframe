@@ -1,5 +1,5 @@
 # wp-timeframe
-A tiny WordPress Plugin to show or hide certain parts of any page at a defined range of time.
+A tiny WordPress plugin to show or hide certain parts of any page at a defined range of time.
 
 ## Shortcode `[timeframe]`
 
@@ -28,3 +28,5 @@ alternativecontent | String to show, when content is not displayed | optional | 
 
 **Currently** only the described format of DateTime is supported. More formats are supported in some time.
 
+## Use with caches
+This plugin doesn't support any caches.
