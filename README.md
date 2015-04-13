@@ -28,5 +28,11 @@ alternativecontent | String to show, when content is not displayed | optional | 
 
 **Currently** only the described format of DateTime is supported. More formats are supported in some time.
 
-## Use with caches
+## Hints
+#### Use with caches
 This plugin doesn't support any caches.
+
+## Installation
+
+1) Checkout the contents of the folder ``/src``
+2) Upload the contents to your plugin directory of WordPress (..and maybe into a subfolder: ``/wp-content/plugins/timeframe/``)
