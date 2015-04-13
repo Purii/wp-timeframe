@@ -34,5 +34,5 @@ This plugin doesn't support any caches.
 
 ## Installation
 
-1) Checkout the contents of the folder ``/src``
-2) Upload the contents to your plugin directory of WordPress (..and maybe into a subfolder: ``/wp-content/plugins/timeframe/``)
+1. Checkout the contents of the folder ``/src``
+2. Upload the contents to your plugin directory of WordPress (..and maybe into a subfolder: ``/wp-content/plugins/timeframe/``)
