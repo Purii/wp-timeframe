@@ -5,14 +5,14 @@ A tiny WordPress plugin to show or hide certain parts of any page at a defined r
 
 **Show a certain part in a specific timeframe:**   
   ```
-  [timeframe showfrom="04-05-2015 09:00:00" showuntil="04-05-2015 09:00:00"]
+  [timeframe showfrom="04-05-2015 09:00:00" showuntil="04-05-2015 09:30:00"]
     Hey! Seems as if you are at the right place in the right time!
   [/timeframe]
   ```
 
 **Hide a certain part in a specific timeframe:**   
   ```
-  [timeframe hidefrom="04-05-2015 09:00:00" hideuntil="04-05-2015 09:00:00"]
+  [timeframe hidefrom="04-05-2015 09:00:00" hideuntil="04-05-2015 09:30:00"]
     I will be away next Monday!
   [/timeframe]
   ```
