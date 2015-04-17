@@ -20,13 +20,11 @@ A tiny WordPress plugin to show or hide certain parts of any page at a defined r
 #### Parameters
 Parameter | Description | Required | Default | Format
 --- | --- | --- | --- | ---
-hidefrom | DateTime when content should start to be hidden | optional | *empty* | ``d-m-Y h:m:s``
-hideuntil | DateTime when content should end to be hidden | optional | *empty* | ``d-m-Y h:m:s``
-showfrom | DateTime when content should start to be shown | optional | *empty* | ``d-m-Y h:m:s``
-showuntil | DateTime when content should end to be shown | optional | *empty* | ``d-m-Y h:m:s``
+hidefrom | DateTime when content should start to be hidden | optional | *empty* | *valid DateTime*
+hideuntil | DateTime when content should end to be hidden | optional | *empty* | *valid DateTime*
+showfrom | DateTime when content should start to be shown | optional | *empty* | *valid DateTime*
+showuntil | DateTime when content should end to be shown | optional | *empty* | *valid DateTime*
 alternativecontent | String to show, when content is not displayed | optional | *empty* | *any string*
-
-**Currently** only the described format of DateTime is supported. More formats are supported in some time.
 
 ## Hints
 #### Use with caches

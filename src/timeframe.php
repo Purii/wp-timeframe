@@ -15,12 +15,6 @@ if ( ! defined( 'WPINC' ) ) {
 
 class Timeframe {
 
-	/**
-	 * Set default format of DateTime
-	 * @var String set DateFormat
-	 */
-	private $dateFormat = "d-m-Y H:i:s";
-
 
 	public function __construct() {
 		add_shortcode( 'timeframe', array( $this, 'shortcode_timeframe' ) );
@@ -56,12 +50,13 @@ class Timeframe {
 			return $this->getStringNotProper();
 		}
 
-		/* Parse Datetime */
-		if ( ! $this->validateDate( $from ) || ! $this->validateDate( $until ) ) {
+		/* Validate and set vars */
+		try {
+			$parsedfrom  = new DateTime( $from );
+			$parseduntil = new DateTime( $until );
+		} catch (Exception $e) {
 			return $this->getStringNotValid();
 		}
-		$parsedfrom  = new DateTime( $from );
-		$parseduntil = new DateTime( $until );
 
 		/* Check if DateTime is in Frame */
 		$isInFrame = $this->isInFrame( $parsedfrom, $parseduntil );
@@ -83,7 +78,7 @@ class Timeframe {
 	private function isInFrame( $hidefrom, $hideuntil, $current = null ) {
 		if ( null === $current ) {
 			/* Current DateTime from WordPress */
-			$current = new DateTime( current_time( $this->dateFormat ) );
+			$current = new DateTime( current_time( 'mysql' ) );
 		}
 		if ( $hidefrom < $current && $current < $hideuntil ) {
 			return true;
@@ -92,24 +87,8 @@ class Timeframe {
 		return false;
 	}
 
-	/**
-	 * Check if String is a valid Date
-	 * @param String $date
-	 * @param String $format
-	 *
-	 * @return bool
-	 */
-	private function validateDate( $date, $dateFormat = null ) {
-		if ( null === $dateFormat ) {
-			$dateFormat = $this->dateFormat;
-		}
-		$d = DateTime::createFromFormat( $dateFormat, $date );
-
-		return $d && $d->format( $dateFormat ) == $date;
-	}
-
 	private function getStringNotValid() {
-		return "<span style=\"color:red;font-weight:bold\">[PLUGIN TIMEFRAME] Please use a valid format to define the dates: <em title=\"04-05-2015 09:00:00\">$this->dateFormat</em></strong>.";
+		return "<span style=\"color:red;font-weight:bold\">[PLUGIN TIMEFRAME] Please use a valid format to define the dates.";
 	}
 
 	private function getStringNotProper() {
